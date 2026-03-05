@@ -30,17 +30,20 @@ def modulo(a, b):
     if b == 0:
         raise ValueError("Cannot divide by zero!")
     return a % b
+def power(a, b):
+    """Raise a to the power of b."""
+    return a ** b
 
 
 
 def main():
     """Main function to run the calculator."""
     print("Welcome to the Simple Calculator!")
-    print("Operations: +, -, *, /, %")
+    print("Operations: +, -, *, /, ^")
     
     try:
         num1 = float(input("Enter first number: "))
-        operator = input("Enter operator (+, -, *, /, %): ")
+        operator = input("Enter operator (+, -, *, /, ^): ")
         num2 = float(input("Enter second number: "))
         
         if operator == "+":
@@ -53,6 +56,8 @@ def main():
             result = divide(num1, num2)
         elif operator == "%":
             result = modulo(num1, num2)
+        elif operator == "^":
+            result = power(num1, num2)
         else:
             print("Invalid operator!")
             return
